@@ -40,7 +40,7 @@ export const TodoContext = React.createContext<
 const reducer = (currentState: TTodo[], action: TAction) => {
   switch (action.type) {
     case typeConstants.ADD_TODO:
-      return [...currentState, action.payload];
+      return [...currentState, action.payload as TTodo];
 
     case typeConstants.TASK_COMPLETE:
       return currentState.map((todo) =>
