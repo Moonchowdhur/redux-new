@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import UserData from "./components/DataUser";
+import UserInfowithUseReducer from "./components/UserInfowithUseReducer";
+import { TodoProvider } from "./context/TodoProvider";
+import TodoForm from "./components/Todo/TodoForm";
+import TodoList from "./components/Todo/TodoList";
 
 function App() {
+  // const [count, setCount] = useState(0);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TodoProvider>
+      <div className="bg-blue-300 md:w-9/12 mx-auto p-4">
+        {/* <h2>{count}</h2> */}
+        {/* <CounterWithClassComponent count={count} setCount={setCount} /> */}
+        {/* <UserData /> */}
+        {/* <UserInfowithUseReducer /> */}
+        <TodoForm />
+        <TodoList />
+      </div>
+    </TodoProvider>
   );
 }
 
